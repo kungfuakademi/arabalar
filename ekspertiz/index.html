@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#1A6985">
+<meta name="robots" content="noindex, nofollow">
+<title>Corsa · Ekspertiz ve Pazarlık Dosyası</title>
+<style>
+:root{
+  --ground:#EFF1F4; --panel:#FFFFFF; --panel-2:#F6F8FA;
+  --ink:#1A2229; --mid:#44525F; --soft:#78858F;
+  --line:#DCE1E6; --line-soft:#EAEEF1;
+  --accent:#1A6985; --accent-bg:#EBF3F7; --accent-line:#BBD5E1;
+  --warn:#B4690E; --warn-bg:#FDF3E4; --warn-line:#EFD3A6;
+  --bad:#B3261E; --bad-bg:#FDECEA; --bad-line:#F0C2BD;
+  --good:#1E6B4F; --good-bg:#E9F5EF; --good-line:#B6DCC9;
+}
+@media (prefers-color-scheme:dark){
+ :root:not([data-theme="light"]){
+  --ground:#101720; --panel:#18202A; --panel-2:#1D2630;
+  --ink:#E6EBF0; --mid:#B4C0CB; --soft:#8593A0;
+  --line:#293441; --line-soft:#222C37;
+  --accent:#7CBBD8; --accent-bg:#172B36; --accent-line:#2E4552;
+  --warn:#E0A44A; --warn-bg:#2C2213; --warn-line:#4A3A1D;
+  --bad:#E98A80; --bad-bg:#2E1917; --bad-line:#4D2723;
+  --good:#79C9A5; --good-bg:#14261F; --good-line:#274438;
+ }
+}
+:root[data-theme="dark"]{
+  --ground:#101720; --panel:#18202A; --panel-2:#1D2630;
+  --ink:#E6EBF0; --mid:#B4C0CB; --soft:#8593A0;
+  --line:#293441; --line-soft:#222C37;
+  --accent:#7CBBD8; --accent-bg:#172B36; --accent-line:#2E4552;
+  --warn:#E0A44A; --warn-bg:#2C2213; --warn-line:#4A3A1D;
+  --bad:#E98A80; --bad-bg:#2E1917; --bad-line:#4D2723;
+  --good:#79C9A5; --good-bg:#14261F; --good-line:#274438;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ground);color:var(--ink);
+ font:400 15.5px/1.55 Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+ padding:0 0 60px}
+.wrap{max-width:760px;margin:0 auto;padding:0 12px}
+header{background:var(--panel);border-bottom:1px solid var(--line);padding:18px 0 14px;margin-bottom:14px}
+h1{font-size:1.22rem;line-height:1.25;margin:0 0 6px;letter-spacing:-.01em}
+.sub{font-size:.86rem;color:var(--soft);margin:0}
+.idcard{display:grid;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:1px;
+ background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:13px}
+.idcard div{background:var(--panel-2);padding:9px 10px}
+.idcard b{display:block;font-size:.63rem;letter-spacing:.09em;text-transform:uppercase;color:var(--soft);font-weight:700;margin-bottom:3px}
+.idcard span{font-size:.95rem;font-weight:600}
+.idcard span em{font-style:normal;color:var(--soft);font-weight:400;font-size:.85rem}
+
+nav{position:sticky;top:0;z-index:20;background:var(--panel);border-bottom:1px solid var(--line);
+ padding:9px 0;margin-bottom:16px}
+.navin{display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 12px;max-width:760px;margin:0 auto}
+.navin::-webkit-scrollbar{display:none}
+.navin a{flex:0 0 auto;font-size:.78rem;font-weight:600;text-decoration:none;color:var(--mid);
+ border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:var(--panel-2);white-space:nowrap}
+.navin a:hover{border-color:var(--accent-line);color:var(--accent)}
+
+section{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--accent);
+ border-radius:12px;padding:16px 15px 18px;margin-bottom:16px;scroll-margin-top:64px}
+h2{font-size:1.06rem;margin:0 0 4px;letter-spacing:-.01em}
+h2 .n{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;
+ background:var(--accent);color:#fff;font-size:.8rem;font-weight:700;margin-right:9px;vertical-align:2px}
+.lead{font-size:.87rem;color:var(--soft);margin:0 0 14px;padding-left:33px}
+h3{font-size:.93rem;margin:18px 0 8px;color:var(--ink)}
+h3:first-of-type{margin-top:4px}
+p{margin:0 0 10px}
+ul{margin:0 0 12px;padding-left:0;list-style:none}
+li{position:relative;padding-left:17px;margin-bottom:7px;font-size:.92rem}
+li::before{content:"";position:absolute;left:3px;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--accent-line)}
+ul.chk li{padding-left:28px;margin-bottom:9px}
+ul.chk li::before{content:"";left:0;top:.18em;width:17px;height:17px;border-radius:4px;
+ border:1.5px solid var(--line);background:var(--panel-2)}
+b,strong{font-weight:700}
+.box{border-radius:9px;padding:11px 13px;margin:12px 0;font-size:.9rem;border:1px solid}
+.box p:last-child,.box ul:last-child{margin-bottom:0}
+.box .t{display:block;font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;font-weight:700;margin-bottom:6px}
+.b-warn{background:var(--warn-bg);border-color:var(--warn-line)} .b-warn .t{color:var(--warn)}
+.b-bad{background:var(--bad-bg);border-color:var(--bad-line)} .b-bad .t{color:var(--bad)}
+.b-good{background:var(--good-bg);border-color:var(--good-line)} .b-good .t{color:var(--good)}
+.b-acc{background:var(--accent-bg);border-color:var(--accent-line)} .b-acc .t{color:var(--accent)}
+.b-warn li::before{background:var(--warn)} .b-bad li::before{background:var(--bad)}
+.b-good li::before{background:var(--good)} .b-acc li::before{background:var(--accent)}
+.say{display:block;background:var(--panel-2);border-left:3px solid var(--accent);border-radius:0 7px 7px 0;
+ padding:10px 12px;margin:9px 0;font-size:.93rem;font-style:italic}
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0}
+table{border-collapse:collapse;width:100%;min-width:340px;font-size:.87rem}
+th,td{text-align:left;padding:8px 9px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+th{font-size:.66rem;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:700;
+ border-bottom:1px solid var(--line)}
+td:first-child{font-weight:600}
+code{background:var(--panel-2);border:1px solid var(--line-soft);border-radius:4px;padding:1px 5px;font-size:.85em;
+ font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.foot{font-size:.78rem;color:var(--soft);text-align:center;padding:18px 12px 0;line-height:1.6}
+.foot a{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="wrap">
+  <h1>Opel Corsa · Ekspertiz ve Pazarlık Dosyası</h1>
+  <p class="sub">Görüşmeye giderken telefonda aç. Sırayla ilerle, hiçbir maddeyi atlama.</p>
+  <div class="idcard">
+   <div><b>Motor</b><span>1.4 Twinport <em>· 1364 cc</em></span></div>
+   <div><b>Güç</b><span>100 hp</span></div>
+   <div><b>Şanzıman</b><span>AF13 II ✓ <em>· P konumu teyitli</em></span></div>
+   <div><b>Kilometre</b><span>146.000 <em>km · foto 139.753</em></span></div>
+   <div><b>Triger</b><span>Zincir <em>· kayış yok</em></span></div>
+   <div><b>Hedef fiyat</b><span>727–730 bin ₺</span></div>
+  </div>
+ </div>
+</header>
+
+<nav><div class="navin">
+ <a href="#s0">0 · Fotoğraflar</a>
+ <a href="#s1">1 · İlk 5 dakika</a>
+ <a href="#s2">2 · Şanzıman</a>
+ <a href="#s3">3 · Motor</a>
+ <a href="#s4">4 · Kronikler</a>
+ <a href="#s5">5 · Kaporta</a>
+ <a href="#s6">6 · Test sürüşü</a>
+ <a href="#s7">7 · Belgeler</a>
+ <a href="#s8">8 · Pazarlık</a>
+ <a href="#s9">9 · Vazgeç</a>
+ <a href="#s10">10 · Devir</a>
+</div></nav>
+
+<div class="wrap">
+
+<section id="s0">
+ <h2><span class="n">0</span>Fotoğraflardan çıkanlar</h2>
+ <p class="lead">İlan fotoğraflarını inceledim. Üç şey netleşti, bir şey açık kaldı.</p>
+
+ <div class="box b-good">
+  <span class="t">✓ Şanzıman kesinleşti — tam otomatik</span>
+  <p>Vites konsolu fotoğrafında <b>P · R · N · D · 3 · 2 · 1</b> kademeleri net görünüyor. <b>P (Park) konumu var</b> → tork konvertörlü tam otomatik. Easytronic değil. Bu soruyu artık sormana gerek yok.</p>
+  <p>Ayrıca vites gövdesinin solunda <b>kar modu (❄) düğmesi</b> var — ilanda yazmıyordu, bonus.</p>
+ </div>
+
+ <div class="box b-good">
+  <span class="t">✓ LPG gerçekten yok</span>
+  <p>Motor bölmesi fotoğrafında <b>LPG düzeneği görünmüyor</b> — regülatör, karışım kiti, hortum yok. Sade ECOTEC 1.4. Beyanla uyumlu. Akü de yeni görünüyor (Varta).</p>
+ </div>
+
+ <div class="box b-warn">
+  <span class="t">⚠ Kilometre çelişkisi — mutlaka sor</span>
+  <p><b>Gösterge fotoğrafında 139.753 km</b> yazıyor. <b>İlanda 146.000 km.</b> Arada <b>6.247 km</b> fark var.</p>
+  <p>Fotoğraf eski çekilmişse normal. Ama ilan <b>1 Eylül'de</b> yayınlandı. Sor: <b>"Bu fotoğraf ne zaman çekildi? Şu an gösterge kaç gösteriyor?"</b> Yerinde göstergeye kendin bak — <b>146.000'in üstündeyse</b> araç hâlâ aktif kullanımda, bu normal; <b>139.753'te duruyorsa</b> ilan yanlış yazılmış demektir.</p>
+ </div>
+
+ <h3>Bağımsız ekspertiz raporu (Erkaya Otomotiv)</h3>
+ <p>Satıcı ayrı bir ekspertiz raporu da paylaşmış. <b>Tüm ana panellerde yeşil tik var — yani hepsi orijinal.</b> Bu, "değişen yok" beyanını destekliyor. Ama panellerin üzerinde ek işaret kodları var:</p>
+
+ <div class="tblwrap">
+ <table>
+  <thead><tr><th>Kod</th><th>Nerede</th><th>Anlamı</th></tr></thead>
+  <tbody>
+   <tr><td>ST <em>(mor)</em></td><td>Kaput</td><td><b>Sök-Tak Mevcut</b> — kaput sökülüp takılmış</td></tr>
+   <tr><td>BG <em>(kahve)</em></td><td>Kaput · sol ön kapı · arka bölge</td><td>Raporun lejantından oku — teyit edilmedi</td></tr>
+   <tr><td>EÇ <em>(kırmızı)</em></td><td>Sağ ön bölge</td><td>Raporun lejantından oku — teyit edilmedi</td></tr>
+   <tr><td>PLASTİK</td><td>Ön ve arka tampon</td><td>Tamponlar plastik olduğu için ayrı değerlendirilir</td></tr>
+  </tbody>
+ </table>
+ </div>
+
+ <div class="box b-warn">
+  <span class="t">Raporda yapman gereken iki şey</span>
+  <ul>
+   <li><b>Sayfayı aşağı kaydır, lejantı (kısaltma açıklamalarını) bul.</b> BG ve EÇ'nin ne olduğunu rapor kendi yazıyor — tahmin etme, oku</li>
+   <li><b>"Kaputta neden sök-tak var?"</b> diye sor. Motor işi için sökülmüş olabilir (masum), kaza onarımı için sökülmüş olabilir (masum değil). Cevabı bakım faturasıyla eşleşiyor mu bak</li>
+  </ul>
+ </div>
+
+ <div class="box b-acc">
+  <span class="t">Not: iki farklı rapor var, ikisi de aynı şeyi söylüyor</span>
+  <p>Sahibinden'in kendi şeması <b>"sadece arka tampon boyalı, değişen yok"</b> diyor. Erkaya raporu <b>"tüm paneller orijinal"</b> diyor. İkisi çelişmiyor. <b>Ama ikisi de mikron ölçümü değil</b> — kendi seçtiğin ekspertizde tüm gövdeyi tek tek ölçtür.</p>
+ </div>
+
+ <h3>İç mekandan görülenler</h3>
+ <ul>
+  <li>Kumaş koltuk, manuel klima, <b>direksiyonda müzik kumandası var</b></li>
+  <li><b>Direksiyonda kılıf takılı</b> — altındaki aşınmayı gizler. <b>Yerinde kılıfı kaldırıp bak:</b> aşırı parlama/aşınma varsa km ile uyuşmayabilir</li>
+  <li>Gösterge panelinde ESP düğmesi veya lambası görünmüyor — <b>Essentia baz paket, ESP yok</b> varsayımı doğrulanıyor</li>
+  <li>Torpido ve konsol temiz, hasar görünmüyor</li>
+ </ul>
+</section>
+
+<section id="s1">
+ <h2><span class="n">1</span>İlk 5 dakika</h2>
+ <p class="lead">Arabaya dokunmadan önce. Buradaki bir madde bile tutmazsa gerisini konuşmaya gerek yok.</p>
+
+ <div class="box b-bad">
+  <span class="t">Motoru soğukken dinle — bu şansın bir kere</span>
+  <p>Galeriye/satıcıya gitmeden <b>"aracı çalıştırmayın, soğuk dinlemek istiyorum"</b> de. Isıtılmış motor birçok sesi gizler. Sen gelene kadar çalıştırılmışsa <b>bir sonraki güne randevu ver.</b></p>
+ </div>
+
+ <ul class="chk">
+  <li><s>Vites kolunda P konumu</s> — <b>fotoğraftan teyit edildi, tam otomatik ✓</b></li>
+  <li><b>Göstergedeki km kaç?</b> Fotoğrafta 139.753, ilanda 146.000 — hangisi doğru</li>
+  <li><b>Ruhsattaki isim, karşındaki kişiyle aynı mı?</b> Değilse vekâletname iste</li>
+  <li><b>Şase numarası</b> ruhsat, ön cam köşesi ve motor bölmesindeki etikette aynı mı</li>
+  <li><b>Kilometre</b> ilanda yazanla aynı mı</li>
+  <li><b>Kontak açıldığında</b> gösterge panelinde tüm uyarı lambaları yanıp sönmeli, sonra sönmeli. <b>Hiç yanmayan lamba = ampulü sökülmüş olabilir</b> (özellikle motor arıza ve airbag)</li>
+  <li><b>Airbag lambası</b> yanıp sönüp sönüyor mu — sürekli yanık kalıyorsa sistem arızalı, hiç yanmıyorsa iptal edilmiş olabilir</li>
+ </ul>
+
+ <div class="box b-warn">
+  <span class="t">Bu araca özel: satıcı beyanı ile kayıt uyuşmuyordu</span>
+  <p>İlan metni <b>"kaza, boya ve değişen kesinlikle yoktur"</b> diyor ama <b>kendi ekspertiz şemasında arka tampon boyalı</b> görünüyor. Küçük bir kalem ama satıcının beyanı birebir doğru değil. <b>Diğer beyanlarını da tek tek doğrula</b> — özellikle "tramer yok" iddiasını.</p>
+ </div>
+</section>
+
+<section id="s2">
+ <h2><span class="n">2</span>Şanzıman — bu araçta en kritik</h2>
+ <p class="lead">146.000 km, bu şanzımanın tam kritik eşiği. Buraya en çok vakti ayır.</p>
+
+ <p>Araçta <b>AF13 II 4 ileri tork konvertörlü otomatik</b> var — Easytronic değil, bu iyi haber. Ama Corsa D sahiplerinin ortak tespiti şu: <b>vites geçişlerinde sorun yoksa 150.000 km'ye kadar sorunsuz gider.</b> Bu araç 146.000'de, yani tam o eşikte.</p>
+
+ <h3>Yağ — pazarlığın en güçlü kalemi</h3>
+ <ul>
+  <li>Opel bu yağı "ömürlük" diye satar. Kullanıcı deneyimi bunun tersini söylüyor: <b>40.000–65.000 km'de değişmeli</b></li>
+  <li>Yağ tipi <b>AF33</b> (OEM parça no <code>1940771</code>). Model yılına göre Dexron 6 uyumu değişir — servise bunu sor</li>
+  <li><b>Kısmi değişim yetmez:</b> karter boşaltıldığında sadece ~2,5 litre gelir, tork konvertöründeki eski yağ içeride kalır. <b>Makineli tam değişim</b> gerekir</li>
+ </ul>
+
+ <div class="box b-acc">
+  <span class="t">Yağ çubuğu testi — kendin yap</span>
+  <ul>
+   <li><b>Renk kırmızımsı olmalı.</b> Koyulaşmış, kahverengi veya siyahsa yağ ömrünü doldurmuş</li>
+   <li><b>Kokla.</b> Yanık kokusu varsa kavrama diskleri aşınmış demektir — bu ciddi</li>
+   <li>Parmağının arasında ovala: <b>metal partikül</b> hissediyorsan iç aşınma var</li>
+  </ul>
+ </div>
+
+ <h3>Arıza belirtileri — test sürüşünde ara</h3>
+ <ul>
+  <li><b>Sıcakken geri vitese geç girme</b> (5–10 saniye bekleme) — iç basınç kaybının klasik işareti</li>
+  <li><b>1→2 ve 2→3 geçişinde tekleme, tok ses, sarsıntı</b></li>
+  <li><b>Yokuşta güç kaybı</b> — motor devri yükseliyor ama araç hızlanmıyorsa kavrama kayıyor</li>
+  <li><b>Limp mode</b> (ani olarak tek viteste kalma)</li>
+  <li>P konumundan çıkmama, kontağı kapatıp açmayı gerektirme</li>
+ </ul>
+
+ <div class="box b-warn">
+  <span class="t">Ekspertizde OBD ile mutlaka baktır</span>
+  <p>Şu kodlar bu şanzımanda tipik: <code>P0741</code> (tork konvertörü kilitlenme), <code>P0776</code> · <code>P0796</code> · <code>P2714</code> · <code>P2723</code> (selenoid), <code>P0752</code>.</p>
+  <p><b>Sadece aktif hataya bakma — "silinmiş hata kaydı" (freeze frame / geçmiş kayıt) da sorulsun.</b> Satıştan önce hata silmek yaygın bir numaradır.</p>
+ </div>
+</section>
+
+<section id="s3">
+ <h2><span class="n">3</span>Motor — 1.4 Twinport, 100 hp</h2>
+ <p class="lead">Bu motorda triger <b>kayış değil zincir</b>. Yani triger seti masrafı yok — ama zincirin kendi kontrolü var.</p>
+
+ <h3>Triger zinciri</h3>
+ <ul>
+  <li>Zincir programlı değişim gerektirmez, normal şartlarda motor ömrü boyunca gider</li>
+  <li><b>Ama 150.000 km üstündeki araçlarda kontrol edilmesi öneriliyor.</b> Bu araç 146.000'de — tam sınırda</li>
+  <li><b>Belirti:</b> soğuk çalıştırmada motordan <b>metalik takırtı / zincir sesi</b>, düzensiz rölanti, güç kaybı</li>
+  <li>Zincir sesi duyuyorsan <b>gergi (tensioner)</b> zayıflamıştır — bu ciddi bir masraf kalemi, pazarlığa kat</li>
+ </ul>
+
+ <div class="box b-good">
+  <span class="t">Bu aracın en büyük artısı</span>
+  <p><b>LPG hiç takılmamış.</b> LPG'li motorlarda supap oturma yüzeyleri aşınır ve bu geri alınamaz. Bu araçta o risk yok — <b>kompresyon testinde değerlerin dengeli çıkmasını bekliyoruz.</b> Çıkmazsa bu bir alarmdır, çünkü bahanesi yok.</p>
+ </div>
+
+ <h3>Ekspertizde ölçtür</h3>
+ <ul class="chk">
+  <li><b>Silindir kompresyon testi</b> — 4 silindir arası fark <b>1 bar'ı geçmemeli</b></li>
+  <li>Soğuk çalıştırma: ilk 10 saniye ses, titreme, gecikme</li>
+  <li>Rölanti dalgalanması (devir inip çıkıyor mu)</li>
+  <li>Yağ eksiltme, yağ kaçağı, karter havalandırma</li>
+  <li>Egzozdan mavi (yağ) veya beyaz (su) duman</li>
+  <li>Buji ve ateşleme bobini durumu — Corsa'da bobin arızası teklemeye yol açar</li>
+  <li>Yakıt pompası — kalitesiz yakıtla bu motorda kronik bir kalem</li>
+ </ul>
+</section>
+
+<section id="s4">
+ <h2><span class="n">4</span>Corsa D kronikleri</h2>
+ <p class="lead">Bu kasada tekrar eden arızalar. Hepsini tek tek sor ve baktır.</p>
+
+ <div class="tblwrap">
+ <table>
+  <thead><tr><th>Parça</th><th>Belirti</th><th>Not</th></tr></thead>
+  <tbody>
+   <tr><td>Termostat</td><td>Hararet, ısınma göstergesinin oynaması, kalorifer geç ısınması</td><td><b>En tehlikelisi.</b> İhmal edilirse motor komple gidebilir. Değişmiş mi, faturası var mı — sor</td></tr>
+   <tr><td>Direksiyon kutusu / kolonu</td><td>Direksiyonu çevirirken <b>gıcırtı, tık sesi, cızırtı</b></td><td>Kronik. Değişimi tedarikçiye göre <b>1.700–3.500 ₺</b>. Yerinde direksiyonu sağa sola kilitle, ses dinle</td></tr>
+   <tr><td>Amortisör üst takozu</td><td>Kasiste tok ses, gıcırtı (özellikle arka)</td><td>Kronik. Arka yay ve amortisörlerden de gıcırtı gelir</td></tr>
+   <tr><td>Depo kapağı kilit motoru</td><td>Yakıt kapağı açılmıyor</td><td>Küçük ama sık. Orijinali ~120 ₺, muadili çok daha ucuz. <b>Yerinde dene</b></td></tr>
+   <tr><td>Far / stop lambaları</td><td>Ani yanıp sönme, titreme</td><td>Kablo bağlantısı veya devre arızası</td></tr>
+   <tr><td>Marş / akü</td><td>Zor çalışma, zayıf marş</td><td>Kontak, akü veya şarj sistemi</td></tr>
+   <tr><td>Kapı kilitleri, konsol köşeleri, koltuk tabanı</td><td>Gıcırtı</td><td>Ciddi değil ama günlük kullanımda rahatsız eder — <b>test sürüşünde radyoyu kapat, dinle</b></td></tr>
+  </tbody>
+ </table>
+ </div>
+
+ <div class="box b-acc">
+  <span class="t">Kullanıcı tüyosu</span>
+  <p>Corsa D sahipleri direksiyon sistemine yük binmemesi için aracı <b>tekerlekler düz konumda park etmeyi</b> öneriyor. Sağa/sola kırık bırakmak direksiyon kutusunu yoruyor. Satıcı aracı hep kırık park ediyorsa direksiyonu daha dikkatli kontrol et.</p>
+ </div>
+</section>
+
+<section id="s5">
+ <h2><span class="n">5</span>Kaporta ve kayıt doğrulama</h2>
+ <p class="lead">Beyan: "değişen yok, tek boya (arka tampon), tramer yok." Bunu kanıtlat.</p>
+
+ <ul class="chk">
+  <li><b>Kendi SBM 5664 sorgunu çek.</b> Satıcının beyanına güvenme — sekiz kazalı Corsa'yı ancak bu sorguyla yakalamıştık</li>
+  <li><b>Mikron ölçümü tüm gövdede tek tek</b> — sadece arka tamponun boyalı olduğu doğrulansın</li>
+  <li>Kaput, tavan, bagaj kapağı, tüm kapı ve çamurluklar — orijinal kalınlıkta mı</li>
+  <li><b>Cam, far ve tampon orijinal mi</b> — bunlar ekspertiz şemasında görünmez ama tramer kaydı bırakır</li>
+  <li>Camların köşesindeki üretim damgası ve tarihi hepsinde aynı mı</li>
+  <li>Kaporta boşluk simetrisi: kaput–çamurluk, kapı–kapı aralıkları eşit mi</li>
+  <li>Cıvata başlarında <b>tornavida / anahtar izi</b> var mı (sökülmüş parça işareti)</li>
+  <li><b>KM SORGU tablosunda tarihe göre düşüş var mı</b> — muayene ve servis kayıtlarındaki km sırayla artmalı</li>
+  <li>Gösterge / motor beyni / ABS beyni km karşılaştırması</li>
+  <li>Direksiyon, pedal kauçuğu, vites topuzu, koltuk yanağı yıpranması <b>146.000 km ile uyumlu mu</b></li>
+  <li>Bagaj altı stepne havuzunda kırışıklık, kaynak izi, boya farkı</li>
+  <li>Alt takım ve şase kulaklarında düzeltme/çekme izi</li>
+ </ul>
+
+ <div class="box b-warn">
+  <span class="t">Ekspertizi sen seç</span>
+  <p>Satıcının önerdiği ekspertize gitme. <b>Kendi seçtiğin bağımsız ekspertize</b> götür. Satıcı buna itiraz ediyorsa bu tek başına vazgeçme sebebidir.</p>
+ </div>
+</section>
+
+<section id="s6">
+ <h2><span class="n">6</span>Test sürüşü — eşin kullansın</h2>
+ <p class="lead">Arabayı eşin kullanacak. Kararı da o versin. Radyoyu kapat.</p>
+
+ <h3>Sen sürerken</h3>
+ <ul class="chk">
+  <li><b>Soğuk çalıştırma:</b> ilk 10 saniye metalik zincir sesi var mı</li>
+  <li>Rölantide devir sabit mi, titreme var mı</li>
+  <li><b>D'ye ve R'ye alırken</b> geçiş süresi ne kadar — 1 saniyeden uzunsa not al</li>
+  <li>Araç ısındıktan sonra <b>tekrar R'ye al</b> — sıcakken gecikme oluyor mu (en kritik test)</li>
+  <li><b>1→2 ve 2→3 geçişleri</b> yumuşak mı, tok ses var mı</li>
+  <li>Hafif gazla ve tam gazla ayrı ayrı dene — kickdown çalışıyor mu</li>
+  <li><b>Yokuş yukarı:</b> devir yükselip araç hızlanmıyorsa kavrama kayıyor</li>
+  <li>80–100 km/s'te direksiyonda titreme, araç bir tarafa çekiyor mu</li>
+  <li>Sert frende ABS devreye giriyor mu, araç düz duruyor mu</li>
+  <li>Kasiste tok ses, gıcırtı</li>
+  <li>Direksiyonu sağa sola kilitle: gıcırtı, tık sesi</li>
+ </ul>
+
+ <h3>Eşin sürerken</h3>
+ <div class="box b-warn">
+  <span class="t">Rampada dur-kalk — mutlaka yaptır</span>
+  <p>Bu araçta <b>yokuş kalkış desteği (hill hold) YOK.</b> Tork konvertörlü olduğu için sürünme kuvveti aracı tutar, tehlikeli değil — ama <b>frenden gaza geçerken çok kısa bir geri kayma</b> olur.</p>
+  <p>Eşin dik bir rampada birkaç kez dur-kalk yapsın. <b>Rahatsız edici buluyorsa bunu şimdi bilmek, aldıktan sonra bilmekten iyidir.</b></p>
+ </div>
+ <ul class="chk">
+  <li>Park etmesi rahat mı, görüş açısı yeterli mi</li>
+  <li>Arka park sensörü çalışıyor mu</li>
+  <li>Koltuk ve direksiyon ayarı ona uygun mu</li>
+  <li>Klima soğutuyor mu, kalorifer ısıtıyor mu</li>
+ </ul>
+</section>
+
+<section id="s7">
+ <h2><span class="n">7</span>Belgeler ve sorgular</h2>
+ <p class="lead">Bunlar tamam değilse araba iyi olsa bile alınmaz.</p>
+
+ <ul class="chk">
+  <li><b>Ruhsat aslı</b> — sahibin adı, şase ve motor numarası araçla birebir</li>
+  <li><b>e-Devlet: Araç rehin / haciz sorgulama</b> — üzerinde rehin veya haciz varsa devir yapılamaz</li>
+  <li><b>Vergi borcu ve trafik cezası</b> sorgusu — devirde borç aktarılır</li>
+  <li><b>SBM 5664 tramer sorgusu</b> (senin çektiğin, satıcının değil)</li>
+  <li><b>Muayene geçerliliği</b> — ilanda 2028 diyor, ruhsattan teyit et</li>
+  <li><b>Bakım dosyası ve faturaları</b> — özellikle şanzıman yağı, termostat, amortisör</li>
+  <li><b>İki adet anahtar</b> var mı — Corsa'da ikinci anahtar yaptırmak masraflıdır</li>
+  <li>Kaç sahibi olmuş — ruhsatta görünür</li>
+  <li>Lastiklerin <b>DOT tarihi</b> — "yeni" denen lastikler gerçekten yeni mi (4 haneli sayı: hafta/yıl)</li>
+ </ul>
+
+ <div class="box b-acc">
+  <span class="t">Yıllık sabit gider</span>
+  <p><b>MTV:</b> 1301–1600 cc sınıfındasın. Kıyas için 7–11 yaş dilimi 2026'da yaklaşık <b>4.594 ₺/yıl</b>; araç 2011 model olduğu için daha alt dilimdesin, yani bunun altında. <b>Kesin rakamı GİB Dijital Vergi Dairesi'nin MTV hesaplama aracından şase/plaka ile sorgula.</b></p>
+  <p>Bu yılın MTV'si ödenmiş mi — devirden önce sor.</p>
+ </div>
+</section>
+
+<section id="s8">
+ <h2><span class="n">8</span>Pazarlık</h2>
+ <p class="lead">790.000'den 750.000'e indi. Hedef 727–730. Kozların hazır.</p>
+
+ <h3>Elindeki kozlar</h3>
+ <ul>
+  <li><b>146.000 km — şanzıman yağı eşiği.</b> Bu yağ 40–65 binde değişmeli ve kayıt yoksa <b>makineli tam değişim senin masrafın.</b> Yerel bir otomatik şanzıman servisini arayıp fiyatını öğren, o rakamı pazarlığa kat</li>
+  <li><b>146.000 km — triger zinciri kontrol eşiği.</b> 150 bine dayanmış, kontrol masrafı var</li>
+  <li><b>Arka tampon boyalı</b> — ilan "boya yoktur" diyordu. Bu satıcının kendi beyanındaki tutarsızlık, nazikçe hatırlat</li>
+  <li><b>Essentia baz paket:</b> ESP yok, yan hava yastığı yok, yokuş kalkış desteği yok. Aynı paraya 4 airbaglı Corsa 2013 var</li>
+  <li><b>Elinde alternatif var:</b> listede iki Corsa daha duruyor. Bunu bil, gerekirse söyle</li>
+  <li><b>Kaputta sök-tak kaydı</b> (Erkaya raporu, ST işareti) — açıklaması yoksa pazarlık kalemi</li>
+  <li><b>Peşin ve bugün.</b> Satıcının en çok değer verdiği şey bu</li>
+  <li><b>Ortak tanıdık</b> — ama bunu baskı aracı yapma, güven aracı yap</li>
+ </ul>
+
+ <h3>Nasıl söyleyeceksin</h3>
+ <span class="say">"Araba temiz, beğendik. Ama 146 binde şanzıman yağının makineli değişimi bizi bulacak, zinciri de kontrol ettirmemiz lazım. Tamponun boyası da var. 730 olursa bugün peşin halledelim."</span>
+ <p>Satıcı 740'ta direnirse: <b>750 ile 730 arasını ikiye bölmek yerine masraf kalemini öne çıkar.</b> "Ben size masraf çıkarmıyorum, sadece bizi bekleyen işi söylüyorum" cümlesi işe yarar.</p>
+
+ <div class="box b-good">
+  <span class="t">Ekspertiz sonrası ikinci pazarlık hakkın</span>
+  <p>Fiyatı sözlü bağlamadan önce <b>"ekspertizden temiz çıkarsa bu fiyata alırım"</b> de. Ekspertizde beklenmedik bir şey çıkarsa <b>fiyatı yeniden konuşma hakkın doğar</b> — bunu baştan söylemek, sonradan söylemekten çok daha kolaydır.</p>
+ </div>
+</section>
+
+<section id="s9">
+ <h2><span class="n">9</span>Bunlardan biri çıkarsa vazgeç</h2>
+ <p class="lead">Araba ne kadar hoşuna giderse gitsin. Bu listedeki her madde, sonradan çok daha pahalıya patlar.</p>
+
+ <div class="box b-bad">
+  <span class="t">Kırmızı çizgiler</span>
+  <ul>
+   <li><b>SBM sorgusu satıcının beyanından farklı çıkarsa</b> — sadece kaza sayısı değil, tutarı da</li>
+   <li><b>Şanzıman yağı siyah veya yanık kokuluysa</b></li>
+   <li><b>Sıcakken geri vitese geç giriyorsa</b> (5–10 sn bekleme)</li>
+   <li><b>1→2 geçişinde belirgin tekleme veya tok ses varsa</b></li>
+   <li><b>OBD'de şanzıman hata kaydı veya silinmiş kayıt varsa</b></li>
+   <li><b>Soğuk çalıştırmada metalik zincir sesi varsa</b></li>
+   <li><b>KM sorgu tablosunda düşüş varsa</b> — bu tartışılmaz, hemen çık</li>
+   <li><b>Göstergedeki km 139.753'ün altındaysa</b> — geri sarılmış demektir</li>
+   <li><b>Mikron ölçümünde arka tampon dışında boya çıkarsa</b> — satıcı yalan söylemiş demektir</li>
+   <li><b>Şase kulağında veya podyede düzeltme izi varsa</b></li>
+   <li><b>Kompresyon farkı 1 bar'ı geçerse</b> — LPG'siz bir motorda bunun bahanesi yok</li>
+   <li><b>Satıcı kendi seçtiğin ekspertize götürmene karşı çıkarsa</b></li>
+   <li><b>Airbag lambası hiç yanmıyorsa</b> (iptal edilmiş olabilir)</li>
+  </ul>
+ </div>
+
+ <p><b>Unutma:</b> listede yedi araba daha var. Bu arabayı kaçırmak, kötü bir arabayı almaktan iyidir.</p>
+</section>
+
+<section id="s10">
+ <h2><span class="n">10</span>Devir günü</h2>
+ <p class="lead">Anlaştıysanız sıralama şu.</p>
+
+ <ul class="chk">
+  <li><b>Noterde satış.</b> Devir noterde yapılır, başka hiçbir yerde değil</li>
+  <li>Noterden önce <b>rehin/haciz, vergi ve ceza borcu sorgusunu tekrar çek</b> — o gün de temiz olmalı</li>
+  <li><b>Zorunlu trafik sigortası</b> devir anında araçta olmalı — mevcut poliçe devredilebilir veya yeni poliçe yaptırılır. Sigortasız yola çıkma</li>
+  <li>Plaka aynı ilde kaldığı için <b>plaka değişmez</b></li>
+  <li>Bu yılın <b>MTV'si ödenmiş mi</b> — makbuzunu gör</li>
+  <li><b>İki anahtarı da al</b>, bakım dosyasını al, kullanma kitapçığını al</li>
+  <li>Stepne, kriko, bijon anahtarı ve varsa kilitli bijon anahtarı tam mı</li>
+  <li>Ödemeyi <b>banka üzerinden</b> yap — dekont senin belgen olur</li>
+ </ul>
+
+ <div class="box b-good">
+  <span class="t">İlk hafta yapılacaklar</span>
+  <ul>
+   <li><b>Şanzıman yağı makineli tam değişim</b> (kayıt yoksa) — AF33, OEM 1940771</li>
+   <li>Motor yağı ve filtreler (geçmişi belgeli değilse baştan yap)</li>
+   <li>Termostat kontrolü</li>
+   <li>Fren hidroliği yaşı</li>
+   <li>Kasko yaptır</li>
+  </ul>
+ </div>
+</section>
+
+<p class="foot">
+ Kaynaklar: DonanımHaber Corsa D otomatik şanzıman kullanıcı deneyimleri · Atco Otomatik Şanzıman (arıza kodları) ·
+ Opell Center (triger zinciri) · opelyedekleri.com ve opelim.net (Corsa D kronikleri) · Müşavirler Kulübü (2026 MTV).<br>
+ Satıcı beyanları doğrulanmadıkça beyandır. Rakamlar ve fiyatlar 5 Eylül 2026 itibarıyladır.<br><br>
+ <a href="../">← Araba listesine dön</a>
+</p>
+
+</div>
+</body>
+</html>
